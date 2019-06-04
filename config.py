@@ -4,7 +4,7 @@
 # (height, width)
 imshape = (256, 256, 3)
 # set your classification mode (binary or multi)
-mode = 'binary'
+mode = 'multi'
 # model_name (unet or fcn_8)
 model_name = 'unet_'+mode
 # log dir for tensorboard
