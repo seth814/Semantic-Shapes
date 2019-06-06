@@ -1,19 +1,20 @@
 from PIL import Image
 import io
 import tensorflow as tf
-import skimage
 import os
 import cv2
 import numpy as np
-import matplotlib.pyplot as plt
 from skimage.io import imsave
-import pickle
-from config import model_name, logbase, imshape, labels, hues, n_classes, mode
+from config import model_name, logbase, imshape, labels, hues, n_classes
+import shutil
 
 
 class TrainValTensorBoard(tf.keras.callbacks.TensorBoard):
     def __init__(self, **kwargs):
-        os.system('rm -r ' + os.path.join(logbase, 'metrics'))
+        tmp = os.path.join(logbase, 'metrics')
+        if os.path.exists(tmp):
+            shutil.rmtree(tmp)
+            os.mkdir(tmp)
         # Make the original `TensorBoard` log to a subdirectory 'training'
         training_log_dir = os.path.join(logbase, 'metrics', model_name+'_train')
         super(TrainValTensorBoard, self).__init__(training_log_dir, **kwargs)
@@ -53,8 +54,9 @@ class TensorBoardMask(tf.keras.callbacks.Callback):
         self.im_summaries = []
         self.global_batch = 0
         tmp = os.path.join(logbase, 'images')
-        os.system('rm -r ' + tmp)
-        os.system('mkdir ' + tmp)
+        if os.path.exists(tmp):
+            shutil.rmtree(tmp)
+            os.mkdir(tmp)
         self.logdir = tmp
         self.writer = tf.summary.FileWriter(self.logdir)
         self.write_summaries()
