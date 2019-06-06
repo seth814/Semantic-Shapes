@@ -15,6 +15,7 @@ I currently use cuda 10.0 with nvidia-driver-418
 ### Ubuntu 18.04
 
 You can see your nvidia driver using `nvidia-smi`
+
 Check your cuda version with `nvcc -V`
 
 ```
@@ -57,7 +58,7 @@ Shapely‑1.6.4.post1‑cp36‑cp36m‑win_amd64.whl
 
 `pip install Shapely‑1.6.4.post1‑cp36‑cp36m‑win_amd64.whl`
 
-`pip install windows_requirements.txt`
+`pip install -r windows_requirements.txt`
 
 ## Collection
 
