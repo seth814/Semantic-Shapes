@@ -1,7 +1,6 @@
 shapes.xcf
 __pycache__
 .ipynb_checkpoints
-*.ipynb
 test.py
 events.out.tfevents*
 logs/images
