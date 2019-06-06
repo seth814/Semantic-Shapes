@@ -10,20 +10,18 @@ U-Net and FCN-8 are supported.
 
 Make sure you have a working versions of CUDA, cudnn, and nvidia drivers.
 
+I currently use cuda 10.0 with nvidia-driver-418
+
+### Ubuntu 18.04
+
 You can see your nvidia driver using `nvidia-smi`
 Check your cuda version with `nvcc -V`
-
-I currently use cuda 9.0 with nvidia-driver-418
-
-#### Create an anaconda virtual environment (linux)
 
 ```
 conda create -n shapes python=3.7
 source activate shapes
 pip install -r requirements.txt
 ```
-
-#### pygame
 
 I had some trouble installing pygame on ubuntu 18.04.
 I was able to install pygame using:
@@ -36,28 +34,30 @@ I was able to install pygame using:
 `sudo apt update`
 `sudo apt install python3-pygame`
 
-Windows users can install the precompiled binary.
-Just download the 32 or 64 bit whl.
-
-```
-https://www.lfd.uci.edu/~gohlke/pythonlibs/#pygame
-pip install pygame‑1.9.4‑cp37‑cp37m‑win_amd64.whl
-```
-
-#### labelme
-
-labelme is used to create polygon masks over our images
-Follow the install found here: https://github.com/wkentaro/labelme
-
-#### pydensecrf
-
 pydensecrf is used for conditional random field post processing.
 
 `pip install git+https://github.com/lucasb-eyer/pydensecrf.git`
 
-If you are on windows, it might be easiest to install from conda.
+### Windows 10
 
-`https://github.com/lucasb-eyer/pydensecrf/issues/69`
+The current eigen library in pydensecrf will cause pip to fail on windows.
+Work around involves installing via conda.
+
+```
+conda create -n shapes python=3.6
+activate shapes
+conda install -c conda-forge pydensecrf
+```
+
+Shapely will also fail on windows so install precompiled binary.
+
+https://www.lfd.uci.edu/~gohlke/pythonlibs
+
+Shapely‑1.6.4.post1‑cp36‑cp36m‑win_amd64.whl
+
+`pip install Shapely‑1.6.4.post1‑cp36‑cp36m‑win_amd64.whl`
+
+`pip install windows_requirements.txt`
 
 ## Collection
 
