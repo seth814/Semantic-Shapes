@@ -20,7 +20,7 @@ networkx==2.3
 numpy==1.16.4
 object-detection==0.1
 opencv-python==4.1.0.25
-Pillow==6.0.0
+Pillow==6.2.0
 protobuf==3.8.0
 pydensecrf==1.0rc3
 pygame==1.9.6
