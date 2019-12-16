@@ -38,5 +38,5 @@ tensorboard==1.13.1
 tensorflow-estimator==1.13.0
 tensorflow-gpu==1.13.1
 termcolor==1.1.0
-Werkzeug==0.15.4
+Werkzeug==0.15.3
 wincertstore==0.2
