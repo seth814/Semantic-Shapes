@@ -50,13 +50,8 @@ activate shapes
 conda install -c conda-forge pydensecrf
 ```
 
-Shapely will also fail on windows so install precompiled binary.
-
-https://www.lfd.uci.edu/~gohlke/pythonlibs
-
-Shapely‑1.6.4.post1‑cp36‑cp36m‑win_amd64.whl
-
-`pip install Shapely‑1.6.4.post1‑cp36‑cp36m‑win_amd64.whl`
+2-6-20
+Shapely should now install with 1.7 in python 3.6 on pip.
 
 `pip install -r windows_requirements.txt`
 
