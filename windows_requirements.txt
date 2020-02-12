@@ -25,7 +25,6 @@ mock==3.0.5
 networkx==2.3
 numpy==1.16.4
 oauthlib==3.1.0
-object-detection==0.1
 opencv-python==4.1.0.25
 opt-einsum==3.1.0
 Pillow==6.2.0
