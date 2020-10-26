@@ -1,6 +1,10 @@
 from PIL import Image
 import io
-import tensorflow as tf
+#import tensorflow as tf
+#Compatibility code for tensorflow 2
+import tensorflow.compat.v1 as tf
+tf.disable_v2_behavior()
+
 import os
 import cv2
 import numpy as np
