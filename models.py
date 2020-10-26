@@ -5,7 +5,11 @@ from config import imshape, n_classes, model_name
 from tensorflow.keras import backend as K
 from tensorflow.keras.optimizers import Adam
 import numpy as np
-import tensorflow as tf
+#import tensorflow as tf
+#Compatibility code for tensorflow 2
+import tensorflow.compat.v1 as tf
+tf.disable_v2_behavior()
+
 import os
 
 
